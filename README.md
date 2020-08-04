@@ -1,2 +1,1 @@
-# Javascript
-Exo Javascript - MolenGeek
+# exoJavascript
