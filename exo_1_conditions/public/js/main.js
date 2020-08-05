@@ -24,7 +24,7 @@
 // if (multiplication == resultat) {
 //     alert("La réponse était bien : " + resultat);
 // } else {
-//     alert("C'est dommage, tu n'étais qu'a " + (resultat - multiplication) + " unité de la bonne réponse");
+//     alert("C'est dommage, tu n'étais qu'a " + Math.abs(resultat - multiplication) + " unité de la bonne réponse");
 // }
 
 // 6
