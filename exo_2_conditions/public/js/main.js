@@ -87,32 +87,41 @@
 
 // 8. Conditions sur les nombres
 // let age = parseInt(prompt("Entrez votre âge (pour la réservation du cinéma): "));
-// if (age > 18 && age <= 100) {
-//     alert("Vous êtes majeur, vous pouvez réserver.");
-// } else if (age < 18 && age > 0) {
-//     alert("Vous êtes mineur, l’accès est réservé aux grands.");
+// if (age > 100) {
+//     alert("Vous êtes encore vivant ? Évitez de voir ce film pour le rester.");
 // } else if (age < 0) {
 //     alert("Vous n’êtes même pas nés, n’essayez pas de tricher.");
-// } else if (age > 100) {
-//     alert("Vous êtes encore vivant ? Évitez de voir ce film pour le rester.");
-// } else if (age == 18) {
+// } else if (age < 18) {
+//     alert("Vous êtes mineur, l’accès est réservé aux grands.");
+// } else if (age > 18) {
+//     alert("Vous êtes majeur, vous pouvez réserver.");
+// } else {
 //     alert("Vous pouvez rentrer mais c’est tout juste, n'oubliez pas que ce film peut être choquant.");
 // }
 
 // 9. Opérateurs Logique
-let question1 = prompt("Est-ce que vous êtes riche ?");
-let question2 = prompt("Voulez-vous partir en vacance ?");
-let question3 = prompt("Est-ce que vous avez un chat ?");
-let reponseOui = "oui";
-let reponseNon = "non";
-if (question2 == reponseNon) {
+let riche = prompt("Est-ce que vous êtes riche ?");
+let vacances = prompt("Voulez-vous partir en vacance ?");
+let chat = prompt("Est-ce que vous avez un chat ?");
+
+if (vacances == "oui") {
+    if (riche == "non" || chat == "oui") {
+        alert("Même si vous le voulez, vous ne pouvez pas partir.");
+    } else if (riche == "oui" && chat == "non") {
+        alert("Tout est parfait, partez en vacance !");
+    } else if (riche == "oui" || chat == "non") {
+        alert("Si vous êtes riche, vous pouvez partir en vacances. Sinon vous restez à la maison.");
+    }
+} else {
     alert("Pas de problème, ne partez pas en vacance.");
-} else if (question1 == reponseNon || question3 == reponseOui) {
-    alert("Même si vous le voulez, vous ne pouvez pas partir.");
-} else if (question1 == reponseOui && question2 == reponseNon && question3 == reponseNon) {
-    alert("Vous pourriez partir en vacance si vous le voulez.");
-} else if (question1 == reponseOui && question2 == reponseOui && question3 == reponseNon) {
-    alert("Tout est parfait, partez en vacance !");
-} else if (question1 == reponseOui || question2 != reponseOui || question3 == reponseNon) {
-    alert("Tout ce qu'elle dit est faux...");
 }
+
+// if (riche == "non") {
+//     alert("Pas de problème, ne partez pas en vacance.");
+// } else if (riche == "non" || chat == "oui") {
+//     alert("Même si vous le voulez, vous ne pouvez pas partir.");
+// } else if (riche == "oui" && chat == "non" && vacances == "") {
+//     alert("Vous pourriez partir en vacance si vous le voulez.");
+// } else if (riche == "oui" && chat == "non" && vacances == "oui") {
+//     alert("Tout est parfait, partez en vacance !");
+// } 
