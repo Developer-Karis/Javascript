@@ -1,0 +1,4 @@
+- # Exo 2 Switch
+    - ## Créer une variable qui ressoit ton age via un prompt.
+    - ## A l'aide d'un switch, affichez l'année que vous etes né:
+        - ### Ex:  Vous etes né en 1996.
