@@ -1,0 +1,5 @@
+- # Exo 1 Boucles WHILE
+    - ## Créez une variable classe avec un array
+    - ## A l'aide d'un prompt, choisissez le nombre max d'etudiants dans la classe
+    - ## A l'aide d'une boucle while, inserez des etudiants dans la classe tant que la classe n'est pas remplie
+    - ## Aprés avoir remplis la classe affichez les touts les etudiants
