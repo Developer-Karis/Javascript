@@ -44,17 +44,37 @@
 
 // 4. Créer un tableau avec 5 prénoms, pour chaque prénom plus petit que 6 caractères rajoutez y : "LITTLE" devant chaque prénom
 
-let tab1 = ["karis", "andré", "maxime", "nicolas", "martin"];
+// let tab1 = ["karis", "andré", "maxime", "nicolas", "martin"];
 
-tab1.forEach(element => {
-    if (element.length < 6) {
-        tab1[tab1.indexOf(element)] = ("LITTLE " + tab1[tab1.indexOf(element)]);
-    }
-});
-console.log(tab1);
+// tab1.forEach(element => {
+//     if (element.length < 6) {
+//         tab1[tab1.indexOf(element)] = ("LITTLE " + tab1[tab1.indexOf(element)]);
+//     }
+// });
+// console.log(tab1);
 
 // 5. Créer ce tableau aRanger = ['bonjour',6,'nico','molengeek',[],18,777,'conding',{},'school','coach','tartine',103,true,51]
 // -Créez trois autres tableau "lesNombres", "lesString", "leReste"
 // -Pour chaque élément du tableau aRanger affichez son type dans un console log
 // -Dans chaque tableau mettez respectivement l'élément dans son bon compartiment, les strings dans "lesString", les integer dans "lesNombres" et le reste dans "leReste", le tableau aRanger doit finir vide
 // -Affichez propremen dans une alerte le contenu de chaque tableau
+
+let aRanger = ['bonjour', 6, 'nico', 'molengeek', [], 18, 777, 'conding', {}, 'school', 'coach', 'tartine', 103, true, 51];
+let lesNombres = [];
+let lesStrings = [];
+let leReste = [];
+
+aRanger.forEach(element => {
+    console.log(typeof element + " " + element);
+    if (typeof element == 'string') {
+        lesStrings.push(element);
+    } else if (typeof element == 'number') {
+        lesNombres.push(element);
+    } else {
+        leReste.push(element);
+    }
+});
+alert("Contenu du tableau aRanger : "
+    + "\n" + "\n" + aRanger + "\n" + "\n" + "Contenu du tableau lesNombres : " + lesNombres
+    + "\n" + "\n" + "Contenu du tableau lesStrings : " + lesStrings
+    + "\n" + "\n" + "Contenu du tableau lesStrings : " + leReste);
