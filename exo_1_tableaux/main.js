@@ -48,7 +48,7 @@ let tab1 = ["karis", "andré", "maxime", "nicolas", "martin"];
 
 tab1.forEach(element => {
     if (element.length < 6) {
-        console.log(tab1[tab1.indexOf(element)]);
+        tab1[tab1.indexOf(element)] = ("LITTLE " + tab1[tab1.indexOf(element)]);
     }
 });
 console.log(tab1);
