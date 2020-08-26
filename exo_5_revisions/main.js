@@ -26,14 +26,13 @@ tab.forEach((element, index) => {
         }
     });
     letter3.forEach(letter3 => {
+        // 5. Affiche tous les prénoms plus court que 7 caractères commencant par (k,m,f,y,n,a,e,o) 
+        // et qui sont pair dans la liste mais uniquement leur deux premieres lettres concaténé les uns aux aures 
+        // dont la premiere lettre et en majuscule et la seconde en majuscule, 
+        // exemple : karima,fanny,nicolas,elisa qui donnera KaFaNiEl
         if (element.length < 7 && letter3 == element.charAt(0) && index % 2 == 0) {
             str += element.charAt(0).toUpperCase() + element.charAt(1).toLowerCase();
         }
     });
 });
 console.log("Last exo : " + str);
-
-
-// 5. Affiche tous les prénoms plus court que 7 caractères commencant par (k,m,f,y,n,a,e,o) 
-// et qui sont pair dans la liste mais uniquement leur deux premieres lettres concaténé les uns aux aures 
-// dont la premiere lettre et en majuscule et la seconde en majuscule, exemple :  karima,fanny,nicolas,elisa qui donnera KaFaNiEl
