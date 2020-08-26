@@ -25,9 +25,11 @@
 // let students = ["Maxime", "Karis", "Cactus", "Kadri"];
 // let tab = [];
 
-// for (let i = 0; i < students.length; i++) {
-//     tab.push(students[i]);
-//     students.splice(0, 1);
+// let longueur = students.length;
+
+// for (let i = 0; i < longueur; i++) {
+//     tab.push(students[0]);
+//     students.splice(students[0], 1);
 // }
 // console.log(students);
 // console.log(tab);
@@ -59,22 +61,27 @@
 // -Dans chaque tableau mettez respectivement l'élément dans son bon compartiment, les strings dans "lesString", les integer dans "lesNombres" et le reste dans "leReste", le tableau aRanger doit finir vide
 // -Affichez propremen dans une alerte le contenu de chaque tableau
 
-let aRanger = ['bonjour', 6, 'nico', 'molengeek', [], 18, 777, 'conding', {}, 'school', 'coach', 'tartine', 103, true, 51];
-let lesNombres = [];
-let lesStrings = [];
-let leReste = [];
+// let aRanger = ['bonjour', 6, 'nico', 'molengeek', [], 18, 777, 'conding', {}, 'school', 'coach', 'tartine', 103, true, 51];
+// let lesNombres = [];
+// let lesStrings = [];
+// let leReste = [];
 
-aRanger.forEach(element => {
-    console.log(typeof element + " " + element);
-    if (typeof element == 'string') {
-        lesStrings.push(element);
-    } else if (typeof element == 'number') {
-        lesNombres.push(element);
-    } else {
-        leReste.push(element);
-    }
-});
-alert("Contenu du tableau aRanger : "
-    + "\n" + "\n" + aRanger + "\n" + "\n" + "Contenu du tableau lesNombres : " + lesNombres
-    + "\n" + "\n" + "Contenu du tableau lesStrings : " + lesStrings
-    + "\n" + "\n" + "Contenu du tableau lesStrings : " + leReste);
+// aRanger.forEach(element => {
+//     console.log(typeof element + " " + element);
+//     if (typeof element == 'string') {
+//         lesStrings.push(element);
+//     } else if (typeof element == 'number') {
+//         lesNombres.push(element);
+//     } else {
+//         leReste.push(element);
+//     }
+// });
+// aRanger.splice(0);
+// console.log(aRanger);
+// console.log(lesNombres);
+// console.log(lesStrings);
+// console.log(leReste);
+// alert("Contenu du tableau aRanger : "
+//     + "\n" + "\n" + aRanger + "\n" + "\n" + "Contenu du tableau lesNombres : " + lesNombres
+//     + "\n" + "\n" + "Contenu du tableau lesStrings : " + lesStrings
+//     + "\n" + "\n" + "Contenu du tableau lesStrings : " + leReste);
