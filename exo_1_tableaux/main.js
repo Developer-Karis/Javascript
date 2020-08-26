@@ -61,26 +61,28 @@
 // -Dans chaque tableau mettez respectivement l'élément dans son bon compartiment, les strings dans "lesString", les integer dans "lesNombres" et le reste dans "leReste", le tableau aRanger doit finir vide
 // -Affichez propremen dans une alerte le contenu de chaque tableau
 
-// let aRanger = ['bonjour', 6, 'nico', 'molengeek', [], 18, 777, 'conding', {}, 'school', 'coach', 'tartine', 103, true, 51];
-// let lesNombres = [];
-// let lesStrings = [];
-// let leReste = [];
+let aRanger = ['bonjour', 6, 'nico', 'molengeek', [], 18, 777, 'conding', {}, 'school', 'coach', 'tartine', 103, true, 51];
+let lesNombres = [];
+let lesStrings = [];
+let leReste = [];
 
-// aRanger.forEach(element => {
-//     console.log(typeof element + " " + element);
-//     if (typeof element == 'string') {
-//         lesStrings.push(element);
-//     } else if (typeof element == 'number') {
-//         lesNombres.push(element);
-//     } else {
-//         leReste.push(element);
-//     }
-// });
-// aRanger.splice(0);
-// console.log(aRanger);
-// console.log(lesNombres);
-// console.log(lesStrings);
-// console.log(leReste);
+aRanger.forEach(element => {
+    console.log(typeof element + " " + element);
+    if (typeof element == 'string') {
+        lesStrings.push(element);
+    } else if (typeof element == 'number') {
+        lesNombres.push(element);
+    } else {
+        leReste.push(element);
+    }
+});
+aRanger.splice(0);
+
+// JSON.stringify pour afficher autrement un tableau sur node.js dans la console
+console.log(JSON.stringify(aRanger));
+console.log(JSON.stringify(lesNombres));
+console.log(lesStrings);
+console.log(leReste);
 // alert("Contenu du tableau aRanger : "
 //     + "\n" + "\n" + aRanger + "\n" + "\n" + "Contenu du tableau lesNombres : " + lesNombres
 //     + "\n" + "\n" + "Contenu du tableau lesStrings : " + lesStrings

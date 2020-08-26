@@ -50,9 +50,11 @@
 // du tableau dont la premiere lettre sera en minuscule et la seconde sera en majuscule
 
 let tab = ["Martin", "Karis", "Kadri", "Cactus", "Maxime"];
-let ajout = " ";
+let ajout = "";
 
-tab.forEach(element => {
-    ajout += element.charAt(0).toLowerCase() + element.charAt(1).toUpperCase();    
+tab.forEach((valeur, index) => {
+    ajout += valeur.charAt(0).toLowerCase() + valeur.charAt(1).toUpperCase();
     console.log(ajout);
+    console.log(valeur);
+    console.log(index);
 });
