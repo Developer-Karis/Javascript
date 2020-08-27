@@ -1,4 +1,4 @@
-// ## Exo 4(boucle for et forEach,condition) 
+// ## Exo 4(boucle for et forEach,condition)
 // let leTableau = [4, "true", true, "bonjour", 511, "coding school", {}, 2020, 1, "maryam", false, [], 13, ["salut", 13, false],
 //     "les tartines c'est délicieux", "true et false", 1070, 478, "hello", "top", 4000, 99, "codeur", 45,
 //     "javascript", 399, "autodidacte", "oui", 1000, 1001, "brainstorming", "lol"];
@@ -58,9 +58,13 @@
 
 // let tab1 = [];
 // let tab2 = [];
+// let nombre;
 
 // for (let i = 0; i < 11; i++) {
-//     let nombre = prompt("Entrez un nombre : ");
+//     nombre = Math.round(parseInt(prompt("Entrez un nombre : ")));
+//     while (nombre < 0 || isNaN(nombre)) {
+//         nombre = Math.round(parseInt(prompt("Votre chiffre est trop petit. Entrez un nombre : ")));
+//     }
 //     if (nombre <= 100) {
 //         tab1.push(nombre);
 //     } else {
@@ -74,20 +78,30 @@
 // environs 4 fruits et 4 légumes.**PARTIE 2** : Avec un forEach il faut redistribuer chaque élément dans un bac de fruit et un bac de légumes, 
 // trouvez une astuces pour faire se trie
 
-let fruitLegumes;
-let panierFruits = [];
-let panierLegumes = [];
+// let fruitLegumes;
+// let fruitOuLeg;
+// let panier = [];
+// let panierFruits = [];
+// let panierLegumes = [];
 
-for (let i = 0; i < 8; i++) {
-    fruitLegumes = prompt("Entrez des fruits et des légumes : ");
-    if (i == 0 || i == 1 || i == 2 || i == 3) {
-        panierFruits.push(fruitLegumes);
-    } else {
-        panierLegumes.push(fruitLegumes);
-    }
-}
-console.log(panierFruits);
-console.log(panierLegumes);
+// for (let i = 0; i < 8; i++) {
+//     fruitLegumes = prompt("Entrez des fruits et des légumes : ").toLowerCase();
+//     fruitOuLeg = prompt("Fruit(0) ou Légume (1) ? ");
+//     fruitLegumes += fruitOuLeg;
+//     panier.push(fruitLegumes);
+// }
+// panier.forEach(element => {
+//     if (element.slice(-1) == "0") {
+//         element = element.slice(0, -1);
+//         panierFruits.push(element);
+//     } else if (element.slice(-1) == "1") {
+//         element = element.slice(0, -1);
+//         panierLegumes.push(element);
+//     }
+// });
+// console.log(panier);
+// console.log(panierFruits);
+// console.log(panierLegumes);
 
 // 6. Créer un programme qui permet a l'utilisateur de choisir dans quel tiroirs 'sousVetements','vetements','chaussures', 
 // ranger chaque éléments de ce tableau
@@ -101,12 +115,22 @@ let tiroirVetements = [];
 let tiroirChaussures = [];
 
 for (let i = 0; i < vetements.length; i++) {
-    rangement = prompt("Choisir dans quel tiroirs : 'sousVetements','vetements','chaussures'");
-    if (rangement == "sousVetements") {
-        tiroirSousVetements.push(vetements);
+    rangement = prompt("Choisir dans quel tiroirs tu veux ranger tes vetements : "
+        + "\n" + "\n" + "Voici la liste : " + vetements[i] + "\n" + "\n" + "Votre choix ? sous-vetements, vetements, chaussures. ");
+    while (rangement != "sous-vetements" && rangement != "vetements" && rangement != "chaussures") {
+        alert("Tiroir non reconnu ! ");
+        rangement = prompt("Choisir dans quel tiroirs tu veux ranger tes vetements : "
+            + "\n" + "\n" + "Voici la liste : " + vetements[i] + "\n" + "\n" + "Votre choix ? sous-vetements, vetements, chaussures. ");
+    }
+    if (rangement == "sous-vetements") {
+        tiroirSousVetements.push(vetements[i]);
     } else if (rangement == "vetements") {
-        tiroirVetements.push(vetements);
+        tiroirVetements.push(vetements[i]);
     } else {
-        tiroirChaussures.push(vetements);
+        tiroirChaussures.push(vetements[i]);
     }
 }
+console.log(vetements);
+console.log(tiroirSousVetements);
+console.log(tiroirVetements);
+console.log(tiroirChaussures);
