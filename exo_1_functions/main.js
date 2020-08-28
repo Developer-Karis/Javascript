@@ -74,74 +74,74 @@ capitalize("qsmdlkpoeipoe");
 // - nbr1 , operator , nbr2
 // - Je dois pouvoir mettre un nombre choisir entre + - * ou / et un second nombre et obtenir une réponse (Utilisez un switch)
 
-function calcul(nbr1, operator, nbr2) {
-    switch (operator) {
-        case "+":
-            console.log("calcul : " + (nbr1 + nbr2));
-            break;
-        case "-":
-            console.log("calcul : " + (nbr1 - nbr2));
-            break;
-        case "*":
-            console.log("calcul : " + (nbr1 * nbr2));
-            break;
-        case "/":
-            console.log("calcul : " + (nbr1 / nbr2));
-            break;
-        default:
-    }
-}
-let nbr1 = parseInt(prompt("Nombre 1 : "));
-let operator = prompt("Quel opérateur ? +, -, *, / ");
-let nbr2 = parseInt(prompt("Nombre 2 : "));
-calcul(nbr1, operator, nbr2);
+// function calcul(nbr1, operator, nbr2) {
+//     switch (operator) {
+//         case "+":
+//             console.log("calcul : " + (nbr1 + nbr2));
+//             break;
+//         case "-":
+//             console.log("calcul : " + (nbr1 - nbr2));
+//             break;
+//         case "*":
+//             console.log("calcul : " + (nbr1 * nbr2));
+//             break;
+//         case "/":
+//             console.log("calcul : " + (nbr1 / nbr2));
+//             break;
+//         default:
+//     }
+// }
+// let nbr1 = parseInt(prompt("Nombre 1 : "));
+// let operator = prompt("Quel opérateur ? +, -, *, / ");
+// let nbr2 = parseInt(prompt("Nombre 2 : "));
+// calcul(nbr1, operator, nbr2);
 
 // # EXO10
 // - Créer une function [reverseNumber] qui retourne une série de nombre à l'envers (exemple si j'entre 851 elle me retourne 158)
 
-function reverseNumber(nombre, cumul) {
-    for (let i = nombre.length; i >= 0; i--) {
-        cumul += nombre.charAt(i);
-    }
-    console.log(cumul);
-}
-let nombre = prompt("Entrez un nombre : ");
-let cumul = "";
-reverseNumber(nombre, cumul);
+// function reverseNumber(nombre, cumul) {
+//     for (let i = nombre.length; i >= 0; i--) {
+//         cumul += nombre.charAt(i);
+//     }
+//     console.log(cumul);
+// }
+// let nombre = prompt("Entrez un nombre : ");
+// let cumul = "";
+// reverseNumber(nombre, cumul);
 
 // # EXO11
 // - Créer une function [divPar2] contenant un switch qui vérifie si un nombre est divisible par 2
 // - Qui répond "Le num x est divisible par 2 x:2 = z"
 // - Dans le cas ou ce n'est pas divisible il répond : "Ce nombre n'est pas divisible par 2"
 
-function divParDeux(nombre) {
-    switch (true) {
-        case (nombre % 2 === 0):
-            console.log("Le num " + nombre + " est divisble par 2. ");
-            break;
-        default:
-            console.log("Ce nombre n'est pas divisible par 2. ");
-    }
-}
-let divisbleParDeux = parseInt(prompt("Entrez un nombre : "));
-divParDeux(divisbleParDeux);
+// function divParDeux(nombre) {
+//     switch (true) {
+//         case (nombre % 2 === 0):
+//             console.log("Le num " + nombre + " est divisble par 2. ");
+//             break;
+//         default:
+//             console.log("Ce nombre n'est pas divisible par 2. ");
+//     }
+// }
+// let divisbleParDeux = parseInt(prompt("Entrez un nombre : "));
+// divParDeux(divisbleParDeux);
 
 // # EXO12
 // - Créer une fonction [logIn] qui va demander à l'utilisateur un mot de passe et vérifier s'il a bien entré "mdp" si oui, 
 // faites une alert "Vous êtes connecté", si non, redemander le mot de passe jusqu'à ce que l'utilisateur rentre "mdp"
 
-function logIn(mdp) {
-    if (mdp == "mdp") {
-        alert("Vous êtes connecté ! ");
-    } else {
-        while (mdp != "mdp") {
-            mdp = prompt("Entrez un mot de passe : ");
-        }
-        alert("Vous êtes connecté ! ");
-    }
-}
-let mdp = prompt("Entrez un mot de passe : ");
-logIn(mdp);
+// function logIn(mdp) {
+//     if (mdp == "mdp") {
+//         alert("Vous êtes connecté ! ");
+//     } else {
+//         while (mdp != "mdp") {
+//             mdp = prompt("Entrez un mot de passe : ");
+//         }
+//         alert("Vous êtes connecté ! ");
+//     }
+// }
+// let mdp = prompt("Entrez un mot de passe : ");
+// logIn(mdp);
 
 // # EXO13
 // - Créer un tableau [codingSchool12] vide.
@@ -150,15 +150,17 @@ logIn(mdp);
 // - Avec la capture d'écran reproduisez les entrées / sorties de la classe
 
 let codingSchool12 = [];
-console.log(codingSchool12);
+
 function ajout(x) {
     codingSchool12.push(x);
+    console.log(codingSchool12);
 }
-let ajouter = prompt("Entrez quelque chose : ");
-ajout(ajouter);
+let prenom = prompt("Entrez votre prénom : ");
+ajout(prenom);
 
 function remove(y) {
-    codingSchool12.indexOf(y);
+    codingSchool12.splice(codingSchool12.indexOf(y), 1);
+    console.log(codingSchool12);
 }
 let supprimer = prompt("Enlever un élement : ");
 remove(supprimer);
