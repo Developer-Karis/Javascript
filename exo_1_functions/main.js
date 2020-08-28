@@ -114,10 +114,11 @@ capitalize("qsmdlkpoeipoe");
 // - Qui répond "Le num x est divisible par 2 x:2 = z"
 // - Dans le cas ou ce n'est pas divisible il répond : "Ce nombre n'est pas divisible par 2"
 
-// function divParDeux(nombre) {
+// ***** Nouvelle façon de créer une fonction *****
+// let divParDeux = (nombre) => {
 //     switch (true) {
 //         case (nombre % 2 === 0):
-//             console.log("Le num " + nombre + " est divisble par 2. ");
+//             console.log("Le num " + nombre + " est divisible par 2. ");
 //             break;
 //         default:
 //             console.log("Ce nombre n'est pas divisible par 2. ");
@@ -130,18 +131,36 @@ capitalize("qsmdlkpoeipoe");
 // - Créer une fonction [logIn] qui va demander à l'utilisateur un mot de passe et vérifier s'il a bien entré "mdp" si oui, 
 // faites une alert "Vous êtes connecté", si non, redemander le mot de passe jusqu'à ce que l'utilisateur rentre "mdp"
 
-// function logIn(mdp) {
-//     if (mdp == "mdp") {
-//         alert("Vous êtes connecté ! ");
-//     } else {
-//         while (mdp != "mdp") {
-//             mdp = prompt("Entrez un mot de passe : ");
-//         }
-//         alert("Vous êtes connecté ! ");
+// let logIn = (mdp) => {
+//     while (mdp != "mdp") {
+//         mdp = prompt("Votre mot de passe est incorrect ! Réessayer ! ");
 //     }
+//     alert('Vous êtes connecté ! ');
 // }
 // let mdp = prompt("Entrez un mot de passe : ");
 // logIn(mdp);
+
+// Exo 12 Bonus logIn mdp 3 essais 10 secondes
+
+let motDePasse = () => {
+    let i = 2;
+    let mdp = prompt("Entrez un mot de passe : ");
+    while (mdp != "mdp") {
+        if (i != 0) {
+            alert("Il vous reste " + i + " essais. ");
+            mdp = prompt("Votre mot de passe est incorrect ! Réessayer ! ");
+            i--;
+        } else {
+            alert("Vous avez essayer trop de fois ! " + "\n" + "Vous devez attendre 10 secondes ! ");
+            setTimeout(motDePasse, 5000);
+            break;
+        }
+    }
+    if (mdp == "mdp") {
+        alert("Vous êtes connecté ! ");
+    }
+}
+motDePasse();
 
 // # EXO13
 // - Créer un tableau [codingSchool12] vide.
@@ -149,19 +168,19 @@ capitalize("qsmdlkpoeipoe");
 // - Créer une fonction qui permet de retirer quelqu'un au tableau
 // - Avec la capture d'écran reproduisez les entrées / sorties de la classe
 
-let codingSchool12 = [];
+// let codingSchool12 = [];
 
-function ajout(x) {
-    codingSchool12.push(x);
-    console.log(codingSchool12);
-}
-let prenom = prompt("Entrez votre prénom : ");
-ajout(prenom);
+// function ajout(x) {
+//     codingSchool12.push(x);
+//     console.log(codingSchool12);
+// }
+// let prenom = prompt("Entrez votre prénom : ");
+// ajout(prenom);
 
-function remove(y) {
-    codingSchool12.splice(codingSchool12.indexOf(y), 1);
-    console.log(codingSchool12);
-}
-let supprimer = prompt("Enlever un élement : ");
-remove(supprimer);
+// function remove(y) {
+//     codingSchool12.splice(codingSchool12.indexOf(y), 1);
+//     console.log(codingSchool12);
+// }
+// let supprimer = prompt("Enlever un élement : ");
+// remove(supprimer);
 
