@@ -12,6 +12,7 @@ let obj = {
 // - Créez un second avec valeurs et un troiseme personnage sans valeurs
 
 let obj2 = {
+    nom: "Alexis",
     race: "bouldog",
 }
 
@@ -32,5 +33,12 @@ console.log(obj3);
 // - Créez une propriété au personnage_3 qui a comme valeur une fonction qui affiche bonjour + nom du personnage
 // - Via la console,lancez la method coucou de personnage_4 qui dira "Coucou" leNomDePersonnage2
 
+obj3.myFunc = (str) => {
+    if (str == "Coucou") {
+        return str + " " + obj2.nom;
+    }
+    return "Bonjour " + obj2.nom;
+}
+console.log(obj3.myFunc());
 
-console.log(obj3);
+console.log(obj3.myFunc("Coucou"));
