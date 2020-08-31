@@ -142,45 +142,100 @@ capitalize("qsmdlkpoeipoe");
 
 // Exo 12 Bonus logIn mdp 3 essais 10 secondes
 
-let motDePasse = () => {
-    let i = 2;
-    let mdp = prompt("Entrez un mot de passe : ");
-    while (mdp != "mdp") {
-        if (i != 0) {
-            alert("Il vous reste " + i + " essais. ");
-            mdp = prompt("Votre mot de passe est incorrect ! Réessayer ! ");
-            i--;
-        } else {
-            alert("Vous avez essayer trop de fois ! " + "\n" + "Vous devez attendre 10 secondes ! ");
-            setTimeout(motDePasse, 5000);
-            break;
-        }
-    }
-    if (mdp == "mdp") {
-        alert("Vous êtes connecté ! ");
-    }
+let motDePasse = (m) => {
+    // for (var i = 0; i < 3; i++) {
+    //     m = prompt("Entrez votre mot de passe : ");
+    //     if (m == "mdp") {
+    //         alert("Vous êtes connecté ! ");
+    //         i = 3;
+    //     } else if (m != "mdp") {
+    //         alert(`Mot de passe incorrect ! ${2 - i} essais restants. `);
+    //         if (i == 2) {
+    //             alert("Réessayez dans 5 secondes. ");
+    //             setTimeout(motDePasse, 5000);
+    //         }
+    //     }
+    // }
+    // return m;
+
+
+    // if (mdp == "mdp") {
+    //     alert("Vous êtes connecté ! ");
+    // } else {
+    //     let i = 2;
+    //     while (mdp != "mdp" || i != 0) {
+    //         alert("Il vous reste " + i + " essais ! ");
+    //         mdp = prompt("Votre mot de passe est incorrect ! Réessayer ! ");
+    //         i--;
+    //         if (mdp == "mdp") {
+    //             alert("Vous êtes connecté ! ");
+    //             i = 0;
+    //         } else if (i == 0 && mdp != "mdp") {
+    //             i = 3;
+    //             setTimeout(motDePasse, 3000);
+    //             break;
+    //         }
+    //     }
+    // }
+    // let i = 2;
+    // while (mdp != "mdp") {
+    //     if (i != 0) {
+    //         mdp = prompt("Votre mot de passe est incorrect ! Réessayer ! ");
+    //         i--;
+    //     } else {
+    //         alert("Vous avez essayer trop de fois ! " + "\n" + "Vous devez attendre 10 secondes ! ");
+    //         setTimeout(motDePasse, 5000);
+    //         break;
+    //     }
+    // }
+    // if (mdp == "mdp") {
+    //     alert("Vous êtes connecté ! ");
+    // }
 }
-motDePasse();
+let mdp;
+mdp = motDePasse(mdp);
 
 // # EXO13
-// - Créer un tableau [codingSchool12] vide.
+// - Créer un tableau [codingSchool13] vide.
 // - Créer une fonction qui permet d'ajouter quelqu'un au tableau
 // - Créer une fonction qui permet de retirer quelqu'un au tableau
 // - Avec la capture d'écran reproduisez les entrées / sorties de la classe
 
-// let codingSchool12 = [];
+let codingSchool13 = [];
+let codingSortie = [];
+let codingPresent = [];
+let ask1;
+let ask2;
+let ask3;
+let vrai = "oui";
+let ajout = (a, b, arrayHistoire, arrayPresent, arraySorti) => {
+    a = prompt('Qui est rentré ? ');
+    b = prompt("Raconte comment il est rentré : ");
+    arrayHistoire.push(a + " " + b);
+    arrayPresent.push(a);
+    arraySorti.forEach((element, index) => {
+        if (a == element) {
+            arraySorti.splice(index, 1);
+        }
+    });
+}
+let supp = (c, arraySorti, arrayPresent) => {
+    c = prompt("Qui est sorti ? ");
+    if (c != "") {
+        arrayPresent.forEach((element, index) => {
+            if (element == c) {
+                arraySorti.push(c);
+                arrayPresent.splice(index, 1);
+            }
+        });
+    }
+}
 
-// function ajout(x) {
-//     codingSchool12.push(x);
-//     console.log(codingSchool12);
-// }
-// let prenom = prompt("Entrez votre prénom : ");
-// ajout(prenom);
-
-// function remove(y) {
-//     codingSchool12.splice(codingSchool12.indexOf(y), 1);
-//     console.log(codingSchool12);
-// }
-// let supprimer = prompt("Enlever un élement : ");
-// remove(supprimer);
-
+while (vrai == "oui") {
+    ajout(ask1, ask2, codingSchool13, codingPresent, codingSortie);
+    supp(ask3, codingSortie, codingPresent);
+    vrai = prompt("Quelqu'un d'autre est rentré ? (oui ou non) ");
+}
+console.log(codingSchool13);
+console.log(codingPresent);
+console.log(codingSortie);
