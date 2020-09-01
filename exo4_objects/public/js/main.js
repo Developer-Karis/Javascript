@@ -122,11 +122,25 @@ console.log(personnage1.derober());
 console.log(panier_sergio.magasin);
 
 // # Exo 5
-// - Créer un objet "vieille_dame" avec une propriété "age" assez élevée une propriété "nom" contenant un "prenom" et un "nom de famille", une dernière propriété "moral" avec comme valeur "mal"
+// - Créer un objet "vieille_dame" avec une propriété "age" assez élevée une propriété "nom" contenant un "prenom" et un "nom de famille", 
+// une dernière propriété "moral" avec comme valeur "mal"
 // - une propriété "objet" par exemple une canne 
-// - une method se_plaindre qui selon son moral fait une alert différente, si son moral = mal alors elle dira "Vous me dérangez", si son moral = bien alors elle dira bonjour monsieur + le nom du vieil_homme
+// - une method se_plaindre qui selon son moral fait une alert différente, si son moral = mal alors elle dira "Vous me dérangez", 
+// si son moral = bien alors elle dira bonjour monsieur + le nom du vieil_homme
 
-
+let vieille_dame = {
+    age: 78,
+    nom: { prenom: "Elisa", nomFamille: "Lopez", moral: "mal" },
+    objet: "canne",
+    se_plaindre() {
+        if (this.nom.moral == "mal") {
+            alert("Vous me dérangez ! ");
+        } else {
+            alert("Bonjour monsieur " + this.nom.prenom);
+        }
+    }
+}
+console.log(vieille_dame.se_plaindre());
 
 // # Exo 5 B
 // - Rajouter une method "se_promener" à la vieille_dame, qui change la valeur de l'objet à perdu 
