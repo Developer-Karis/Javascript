@@ -2,18 +2,18 @@
 // - Créez un objet avec vos valeurs
 
 let obj = {
-    prenom: "Karis",
     nom: "Papadopoulos",
     age: 23,
     taille: 176,
 }
+console.log(obj);
 
 // # Exo 2 
 // - Créez un second avec valeurs et un troiseme personnage sans valeurs
 
 let obj2 = {
     nom: "Alexis",
-    race: "bouldog",
+    age: "18",
 }
 
 let obj3 = {};
@@ -33,12 +33,15 @@ console.log(obj3);
 // - Créez une propriété au personnage_3 qui a comme valeur une fonction qui affiche bonjour + nom du personnage
 // - Via la console,lancez la method coucou de personnage_4 qui dira "Coucou" leNomDePersonnage2
 
-obj3.myFunc = (str) => {
-    if (str == "Coucou") {
-        return str + " " + obj2.nom;
-    }
+obj3.myFunc = () => {
     return "Bonjour " + obj2.nom;
 }
-console.log(obj3.myFunc());
+console.log(obj3.myFunc(obj3.nom));
 
-console.log(obj3.myFunc("Coucou"));
+let obj4 = {
+    coucou(nom) {
+        return 'Coucou ' + nom;
+    }
+}
+
+console.log(obj4.coucou(obj2.nom));
