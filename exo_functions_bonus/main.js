@@ -5,29 +5,29 @@
 // Si le joueur est à 2 unités ou plus = "chaud". 1 unité ou plus = "brûlant". 
 // Si le jouer échoue à trouver le nombre la fonction indique que la partie est terminée.
 
-let trouverNombre = () => {
-    let min = 1;
-    let max = 20;
-    let randomNumber = Math.round(Math.random() * (max - min) + min);
-    let askNumber;
-    for (let i = 4; i >= 0; i--) {
-        askNumber = parseInt(prompt("Choisissez un chiffre : "));
-        if (Math.abs(randomNumber - askNumber) >= 10) {
-            alert("Froid ! ");
-        } else if (Math.abs(randomNumber - askNumber) >= 5) {
-            alert("Tiède ! ");
-        } else if (Math.abs(randomNumber - askNumber) >= 2) {
-            alert("Chaud !");
-        } else if (Math.abs(randomNumber - askNumber) >= 1) {
-            alert("Brûlant ! ");
-        } else if (askNumber == randomNumber) {
-            alert("Vous avez trouvé la bonne réponse : " + randomNumber + "\n" + "Bravo !");
-            break;
-        }
-        alert("Il vous reste " + i + " essais restants. ");
-    }
-}
-trouverNombre();
+// let trouverNombre = () => {
+//     let min = 1;
+//     let max = 20;
+//     let randomNumber = Math.round(Math.random() * (max - min) + min);
+//     let askNumber;
+//     for (let i = 4; i >= 0; i--) {
+//         askNumber = parseInt(prompt("Choisissez un chiffre : "));
+//         if (Math.abs(randomNumber - askNumber) >= 10) {
+//             alert("Froid ! ");
+//         } else if (Math.abs(randomNumber - askNumber) >= 5) {
+//             alert("Tiède ! ");
+//         } else if (Math.abs(randomNumber - askNumber) >= 2) {
+//             alert("Chaud !");
+//         } else if (Math.abs(randomNumber - askNumber) >= 1) {
+//             alert("Brûlant ! ");
+//         } else if (askNumber == randomNumber) {
+//             alert("Vous avez trouvé la bonne réponse : " + randomNumber + "\n" + "Bravo !");
+//             break;
+//         }
+//         alert("Il vous reste " + i + " essais restants. ");
+//     }
+// }
+// trouverNombre();
 
 // ## 2
 // Créer la liste d'élève de la codingSchool 13 avec une fonction
@@ -35,10 +35,85 @@ trouverNombre();
 // Créer une liste des non - admis
 // Créer une liste des admis qui devront repasser un test(bonne notes pour le site du chef mais taux d'absence élever)
 
+// let listeEleves = [];
+// let elevesAdmis = [];
+// let elevesNonAdmis = [];
+// let elevesAdmisAvecTest = [];
+
+// let codingSchool13 = () => {
+//     let out = true;
+//     let ajoutEleves;
+//     let absence;
+//     let noteSiteDuChef;
+//     let fin;
+//     while (out == true) {
+//         ajoutEleves = prompt("Nom de l'élève : ");
+//         listeEleves.push(ajoutEleves);
+//         absence = prompt("La personne a été absente ? (oui ou non) ");
+//         if (absence == "oui") {
+//             elevesNonAdmis.push(ajoutEleves);
+//         } else if (absence == "non") {
+//             noteSiteDuChef = prompt("Quelle est la note pour le site du chef sur /20 ? ");
+//             if (noteSiteDuChef < 10) {
+//                 elevesAdmisAvecTest.push(ajoutEleves);
+//                 listeCotes.push(noteSiteDuChef);
+//             } else if (noteSiteDuChef >= 10) {
+//                 elevesAdmis.push(ajoutEleves);
+//                 listeCotes.push(noteSiteDuChef);
+//             }
+//         }
+//         fin = prompt("Voulez-vous arrêter le programme ? (oui ou non) ");
+//         if (fin == "oui") {
+//             out = false;
+//         }
+//     }
+// }
+// codingSchool13();
+// console.log("Liste des élèves : " + listeEleves.join(", "));
+// console.log("Admis : " + elevesAdmis.join(", "));
+// console.log("Non admis : " + elevesNonAdmis.join(", "));
+// console.log("Admis avec test : " + elevesAdmisAvecTest.join(", "));
+
 // ## 3
 // Vous avez un aquarium avec des crevettes, des poissons, des crabes et des escargots, 2 de chaque.Comme c'est le bordel, vous souhaitez séparer toutes les espèces dans 4 bacs 
 // différents en les triant par espèce.Affichez ce que contien chaque aquarium dans la console.Utilisez des fonctions!
 // Vous devez ensuite nourrir tous les habitants des aquariums en même temps.
+
+let aquarium = ["Crevette géante tigrée", "Crevette d'Amano", "Espadon", "Poisson rouge", "Crabe de cocotier", "Maja squinado", "Helix aspersa", "Bulime tronqué"];
+
+let crevettes = [];
+let poissons = [];
+let crabes = [];
+let escargots = [];
+let rangement;
+
+let remplirAquarium = () => {
+    for (let i = 0; i < aquarium.length; i++) {
+        rangement = prompt("Vous devez ranger chaque espèce dans un aquarium. "
+            + "\n" + "Voici la liste : " + aquarium[i]
+            + "\n" + "Choississez l'aquarium : crevettes, poissons, crabes et escargots. ");
+        while (rangement != "crevettes" && rangement != "poissons" && rangement != "crabes" && rangement != "escargots") {
+            alert("Aquarium non reconnu ! ");
+            rangement = prompt("Vous devez ranger chaque espèce dans un aquarium. "
+                + "\n" + "Voici la liste : " + aquarium[i]
+                + "\n" + "Choississez l'aquarium : crevettes, poissons, crabes et escargots. ");
+        }
+        if (rangement == "crevettes") {
+            crevettes.push(aquarium[i]);
+        } else if (rangement == "poissons") {
+            poissons.push(aquarium[i]);
+        } else if (rangement == "crabes") {
+            crabes.push(aquarium[i]);
+        } else if (rangement == "escargots") {
+            escargots.push(aquarium[i]);
+        }
+    }
+}
+remplirAquarium();
+console.log(crevettes);
+console.log(poissons);
+console.log(crabes);
+console.log(escargots);
 
 // ## 4 
 // creer une fonction à fin de calculer la quantité que tu auras besoin dans ta vie d'un aliment ou d'une boisson spécifique. 
@@ -123,6 +198,8 @@ trouverNombre();
 // Créer un programme qui permet à un utilisateur de pouvoir encoder les prénoms des élèves et une côte pour chaque élève.
 // Vous avez besoin de 3 tableaux différents(prénom des élèves, côte des élèves, concatener les prénoms et les côtes des élèves).
 // Il peut rajouter un élève par la suite et il peut aussi arrêter le programme à la fin en lui posant la question(Oui ou Non).
+
+/*----- Déjà fais ----- */
 
 // ## 14
 // Créer un tableau avec plusieurs humains et gobelins(8 element max)
