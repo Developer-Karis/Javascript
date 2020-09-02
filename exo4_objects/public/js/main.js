@@ -26,7 +26,7 @@ let guerrier = {
 let taille_nom_guerrier = guerrier.nom.length;
 console.log(taille_nom_guerrier);
 
-let troiseme_index_arme_guerrier = Object.values(guerrier)[3];
+let troiseme_index_arme_guerrier = guerrier.arme.charAt(3);
 console.log(troiseme_index_arme_guerrier);
 
 let mage = {
@@ -59,37 +59,41 @@ let perso2 = {
     age: 23
 }
 
+let perso3 = {
+    nom: "Karis",
+    age: 23
+}
+
 let perso1 = {
     nom: "Alexis",
     age: 18,
-    usurpation() {
-        perso1.nom = perso2.nom;
-        return perso2.nom;
+    usurpation(a) {
+        this.nom = a.nom;
+        this.age = a.age;
+        return this;
     }
 }
 console.log();
-console.log(perso2.nom);
-console.log(perso1.nom);
-console.log(perso1.usurpation());
+console.log(perso1);
+perso1.usurpation(perso2);
+console.log(perso1);
+perso1.usurpation(perso3);
+console.log(perso1);
 
 // # Exo 3
 // - Créer un objet avec un nom et une method
 // - La method de votre objet lance un prompt permetant de changer son age
 // - Une alert renvoi l"age de votre objet avec la phrase "Vous avez x ans"
 
-// let askAge;
 // let age = {
-//     monAge: 15,
-//     changerAge() {
-//         askAge = prompt("Entrez votre âge : ");
-//         age.monAge = askAge;
-//         return askAge;
-//     }
-
+//     nom: 'sergen',
+//     age2: "",
+//     age3() {
+//         return this.age2 = prompt("donne un age");
+//     },
 // }
-// console.log("Avant : " + age.monAge);
-// alert("Vous avez " + age.changerAge() + " ans. ");
-// console.log("Après : " + age.monAge);
+// alert('Vous avez ' + age.age3() + ' ans');
+// console.log(age.age2);
 
 // # Exo 4
 // - Créer deux personnages du nom de François et Sergio
@@ -130,17 +134,48 @@ console.log(panier_sergio.magasin);
 
 let vieille_dame = {
     age: 78,
-    nom: { prenom: "Elisa", nomFamille: "Lopez", moral: "mal" },
+    nom: { prenom: "Elisa", nomFamille: "Lopez" },
+    moral: "mal",
     objet: "canne",
-    se_plaindre() {
-        if (this.nom.moral == "mal") {
-            alert("Vous me dérangez ! ");
-        } else {
-            alert("Bonjour monsieur " + this.nom.prenom);
+    se_plaindre(a) {
+        if (this.moral == "mal") {
+            alert("Vous me déranger ! " + a.nom);
+        } else if (this.moral == "bien") {
+            alert("Bonjour monsieur " + a.nom);
         }
+    },
+    se_promener() {
+        this.objet = "perdu";
+        return this;
     }
 }
-console.log(vieille_dame.se_plaindre());
+
+let vieil_homme = {
+    nom: "Antonio",
+    prenom: "da Silva",
+    age: 62,
+    saluer() {
+        alert("Bonjour " + vieille_dame.nom.prenom + " " + vieille_dame.nom.nomFamille);
+        vieille_dame.se_plaindre(this);
+    },
+    adoucir() {
+        return vieille_dame.moral = "bien";
+    }
+}
+
+let vieil_homme2 = {
+    nom: "Miguel",
+}
+
+vieille_dame.se_plaindre(vieil_homme);
+vieille_dame.se_plaindre(vieil_homme2);
+
+console.log(vieille_dame.objet);
+console.log(vieille_dame.se_promener());
+
+vieil_homme.saluer();
+vieil_homme.adoucir();
+vieille_dame.se_plaindre(vieil_homme);
 
 // # Exo 5 B
 // - Rajouter une method "se_promener" à la vieille_dame, qui change la valeur de l'objet à perdu 
