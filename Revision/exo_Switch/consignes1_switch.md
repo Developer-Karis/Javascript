@@ -1,0 +1,2 @@
+# Exercice 1
+- Demande l'âge de l'utilisateur via un prompt. Si l'utilisateur indique 18, tu lui réponds via une console.log "tu es majeur". S'il donne 25, tu lui réponds, "Un quart de siècle ça se  fête". S'il donne 50, tu lui réponds "1/2 siècle c'est quelque chose". 

@@ -1,0 +1,2 @@
+# Exercice 2 pas adapté pour un switch. Mieux pour une fonction
+- Demande à l'utilisateu d'indiquer un mot via un prompt. Si le mot est de type string tu lui répond via une console.log "La valeur indiquez est un string". Si le mot est de type nombre, tu lui répond "La valeur indiquez est un nombre"

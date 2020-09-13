@@ -1,0 +1,2 @@
+# Exercice 3
+- Stock la date d'aujourd'hui dans une variable const. (Attention utilise la méthode date). Une fois la date stockée, fais un swtich qui va nous renvoyez le jour de la semaine que nous sommes
