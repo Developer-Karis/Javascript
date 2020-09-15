@@ -159,7 +159,6 @@ console.log(calcule.operateurs(7, "+", 2));
 
 // # Exo 9
 // - Création d'un récit (Faite en sorte que les méthodes et les actions ressemblent à une histoire via des consoles.log) : 
-
 // - Crée un objet du nom de "Bruxelles". Il prendra comme propriété : nombre de communes(19), popularité(normal), communePreferer(bruxelles). 
 // Il prendra également un array vide du nom de "projet" et un objet nommé "ministre" avec comme propriété {nom, prenom et argent}.
 // - Vous êtes dans le personnage du ministre et vous voulez ramener une fraicheur dans la ville bruxelles.
@@ -176,8 +175,27 @@ let bruxelles = {
     popularite: "normal",
     communePreferer: "bruxelles",
     projet: [],
-    ministre: { nom, prenom, argent },
+    ministre: { nom: " ", prenom: " ", argent: " " },
+    futuriste: [],
+    creerCommune() {
+        for (let i = 0; i < 3; i++) {
+            let nouvelleCommune = prompt("Ajouter une nouvelle commune : ");
+            this.futuriste.push(nouvelleCommune);
+            if (i == 3) {
+                this.popularite = "ville lixueuse";
+            }
+        }
+        return this.futuriste;
+    },
+    randomCommune() {
+        let random = Math.round(Math.random() * this.futuriste.length);
+        return this.communePreferer = this.futuriste[random];
+    }
 }
+console.log("Exo 9 : ");
+console.log(bruxelles.creerCommune());
+console.log("Commune préférer : " + bruxelles.randomCommune());
+console.log(bruxelles);
 
 // # Exo 10 Bonus (objet, condition, boucle, function)
 // - Créé un objet Personnage avec des propriétés(idendite:{nom, prenom}, argent, lieu, humeur)
@@ -188,3 +206,21 @@ let bruxelles = {
 // - (Bonus dans le bonnus :faite en sorte qu'une tération se fasse tous les 2sec)
 // - Pour la fonction qui lui permet de gagner de l'argent, si son humeur est positif, tous les 2 heures, 
 // il dira via une console.log : "J'aime mon travail", mais par contre si son humeur est négatif, il dira "je préfére mon lit"
+
+let personnage = {
+    idendite: { nom: " ", prenom: " " },
+    argent: 0,
+    lieu: "chez moi",
+    humeur: "negatif",
+    changerLieu() {
+        this.lieu = "travail";
+        return "Lieu : " + this.lieu;
+    },
+    gagnerArgent() {
+        return "Argent : " + this.argent + " € ";
+    }
+}
+console.log("Exo 10 : ");
+console.log(personnage.changerLieu());
+console.log(personnage.gagnerArgent());
+
