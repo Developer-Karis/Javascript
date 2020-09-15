@@ -56,14 +56,19 @@ afficherDate();
 // - Placer des étudiants dans une seul classe. Une classe peut prendre 20 élèves. (Attention, à cause du covid, ils peuvent en prendre que la moitié
 
 let createClass = (remplir) => {
-    let remplirClasse = new Array(remplir);
-    for (let i = 0; i < 20 / 2; i++) {
-        remplirClasse[i] = new Array("Karis");
+    let remplirClasse = new Array();
+    for (let i = 0; i < remplir; i++) {
+        remplirClasse[i] = new Array();
+    }
+    let etudiant;
+    for (let i = 0; i < 10; i++) {
+        etudiant = prompt("Entrez le nom de l'élève : ");
+        remplirClasse[0].push(etudiant);
     }
     console.log(remplirClasse);
 }
 console.log("Exo 4 : ");
-let nombreRemplir = prompt("Combien de classe voulez-vous créer ? ");
+let nombreRemplir = parseInt(prompt("Combien de classe voulez-vous créer ? "));
 createClass(nombreRemplir);
 
 // # Exercice 5

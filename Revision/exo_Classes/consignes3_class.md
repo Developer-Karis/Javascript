@@ -1,0 +1,16 @@
+# Exo 3
+- Créer une class objet "Enfant" qui prend comme propriété : prenom, argent, humeur(neutre), sac(array vide)
+- Créer deux instances de "Enfant" (deux enfants).
+- Créer une autre classe "Magasin" qui prend comme propriété : produit, prix.
+- Créer trois instances de magasin (trois produits)
+- Les enfants auront une méthode qui permet de payer le produit et la stocker dans leurs sacs. 
+- Créer une instance maison qui prend une méthode. La méthode va devoir rendre l'humeur des enfants soit positif, soit négatif via un random.
+- Créer une méthode dans l'objet "Enfant". La méthode se base sur l'humeur de l'enfant. Si l'humeur de l'enfant est positif, la méthode renverra via une console.log " enfant1 est hereux, il cuisine pour toute la famille. 
+- Sinon il renverra via une console.log "enfant1 n'est pas en forme, il ne cuisinera pas"
+- Le récit prendra cette forme : 
+    - L'enfant1 a acheter produitA,
+    - L'enfant2 a acheter produitB,
+    - L'enfant1 a est d'humeur positif ou negatif
+    - L'enfant2 a est d'humeur positif ou negatif
+    - L'enfant1 veut bien cuisiner ou non
+    - L'enfant2 veut bien cuisiner ou non

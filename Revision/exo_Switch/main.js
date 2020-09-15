@@ -26,11 +26,11 @@ switch (age) {
 // Si le mot est de type string tu lui répond via une console.log "La valeur indiquez est un string".
 // Si le mot est de type nombre, tu lui répond "La valeur indiquez est un nombre"
 
-let mot = Number(prompt("Entrez un mot : "));
+let mot = parseInt(prompt("Entrez un mot : "));
 console.log("Exo 2 : ");
 
 let typePrompt = () => {
-    if (typeof mot == "string") {
+    if (isNaN(mot)) {
         console.log("La valeur indiquez est un string. ");
     } else if (typeof mot == "number") {
         console.log("La valeur indiquez est un nombre. ");
