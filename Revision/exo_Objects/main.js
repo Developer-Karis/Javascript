@@ -181,7 +181,7 @@ let bruxelles = {
         for (let i = 0; i < 3; i++) {
             let nouvelleCommune = prompt("Ajouter une nouvelle commune : ");
             this.futuriste.push(nouvelleCommune);
-            if (i == 3) {
+            if (i == 2) {
                 this.popularite = "ville lixueuse";
             }
         }
@@ -212,15 +212,32 @@ let personnage = {
     argent: 0,
     lieu: "chez moi",
     humeur: "negatif",
-    changerLieu() {
-        this.lieu = "travail";
-        return "Lieu : " + this.lieu;
-    },
-    gagnerArgent() {
-        return "Argent : " + this.argent + " € ";
+}
+
+function changerLieu() {
+    personnage.lieu = "Travail";
+    return "Lieu : " + personnage.lieu;
+}
+
+function gagnerArgent() {
+    let message;
+    for (let i = 0; i < 8; i++) {
+        if (personnage.humeur == "negatif") {
+            personnage.argent += 10;
+            console.log("Argent : " + personnage.argent + " € ");
+        } else {
+            personnage.argent += 15;
+            console.log("Argent : " + personnage.argent + " € ");
+        }
     }
+    if (personnage.argent == 120) {
+        message = "J'aime mon travail ! ";
+    } else {
+        message = "Je préfère mon lit ! ";
+    }
+    return message;
 }
 console.log("Exo 10 : ");
-console.log(personnage.changerLieu());
-console.log(personnage.gagnerArgent());
+console.log(changerLieu());
+console.log(gagnerArgent());
 
