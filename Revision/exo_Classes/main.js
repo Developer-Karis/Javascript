@@ -11,16 +11,16 @@ class Personnage {
         this.argent = argent;
     }
 
-    get presentation() {
+    presentation() {
         return this.nom + " " + this.prenom + " " + this.age + " " + this.argent;
     }
 }
 let personnage1 = new Personnage("Papadopoulos", "Karis", 23, 300);
 let personnage2 = new Personnage("Monge Lopez", "Alexis", 19, 1500);
 let personnage3 = new Personnage("Papadopoulos", "Alexandre", 13, 1000);
-console.log(personnage1.presentation);
-console.log(personnage2.presentation);
-console.log(personnage3.presentation);
+console.log(personnage1.presentation());
+console.log(personnage2.presentation());
+console.log(personnage3.presentation());
 
 // # Exo 2
 // - Créer une class objet "Molengeek" avec 3 propriété : nom, prenom, grade.
@@ -35,7 +35,7 @@ class Molengeek {
         this.grade = grade;
     }
 
-    get role() {
+    role() {
         if (this.grade == "admin") {
             return "Vous avez les droits admins : " + this.nom + " " + this.prenom;
         } else {
@@ -46,9 +46,9 @@ class Molengeek {
 let equipe1 = new Molengeek("Papadopoulos", "Karis", "admin");
 let equipe2 = new Molengeek("Kbib", "Abderrahim ", "admin");
 let equipe3 = new Molengeek("Hunin", "Fanny ", "coachino");
-console.log(equipe1.role);
-console.log(equipe2.role);
-console.log(equipe3.role);
+console.log(equipe1.role());
+console.log(equipe2.role());
+console.log(equipe3.role());
 
 // # Exo 3
 // - Créer une class objet "Enfant" qui prend comme propriété : prenom, argent, humeur(neutre), sac(array vide)
@@ -94,7 +94,7 @@ class Enfant {
         if (this.humeur == "positif") {
             return this.nom + " est heureux, il cuisine pour toute la famille. ";
         } else {
-            return this.nom + " n'est pas en forme, il ne cuisinera pas";
+            return this.nom + " n'est pas en forme, il ne cuisinera pas. ";
         }
     }
 }
