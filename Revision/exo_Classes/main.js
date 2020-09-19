@@ -73,33 +73,38 @@ class Enfant {
         this.prenom = prenom;
         this.argent = argent;
         this.humeur = humeur;
-        this.sac = sac;
+        this.sac = [sac];
     }
 
-    get result() {
-        this.changerHumeur();
-        return this.randomHumeur();
-    }
-
-    payerEtSotcker() {
-
+    payerEtStocker() {
+        this.argent -= this.sac[0].prix;
+        if (this.argent < 0) {
+            return `Vous n'avez pas assez d'argent ! `;
+        } else {
+            return `${this.prenom} a acheter un(e) ${this.sac[0].produit}.`;
+        }
     }
 
     randomHumeur() {
-        let random = Math.round(Math.random() * 1);
-        return random;
+        let humeur = ["positif", "negatif"];
+        let random = Math.floor(Math.random() * humeur.length);
+        if (random == 0) {
+            this.humeur = "positif";
+            return `${this.prenom} est d'humeur ${this.humeur}. `;
+        } else {
+            this.humeur = "negatif";
+            return `${this.prenom} est d'humeur ${this.humeur}. `;
+        }
     }
 
     changerHumeur() {
         if (this.humeur == "positif") {
-            return this.nom + " est heureux, il cuisine pour toute la famille. ";
+            return this.prenom + " est heureux, il cuisine pour toute la famille. ";
         } else {
-            return this.nom + " n'est pas en forme, il ne cuisinera pas. ";
+            return this.prenom + " n'est pas en forme, il ne cuisinera pas. ";
         }
     }
 }
-let enfant1 = new Enfant("Alexandre", 1000, "positif", []);
-let enfant2 = new Enfant("Alexis", 400, "neutre", []);
 
 class Magasin {
     constructor(produit, prix) {
@@ -107,12 +112,23 @@ class Magasin {
         this.prix = prix;
     }
 }
+
 let produit1 = new Magasin("Ordinateur", 300);
 let produit2 = new Magasin("Clavier", 50);
 let produit3 = new Magasin("Souris", 30);
 
-console.log(enfant1.result);
-console.log(enfant1.result);
+let enfant1 = new Enfant("Alexandre", 500, "neutre", produit1);
+let enfant2 = new Enfant("Alexis", 400, "neutre", produit2);
+
+console.log(enfant1.payerEtStocker());
+console.log(enfant2.payerEtStocker());
+
+console.log(enfant1.randomHumeur());
+console.log(enfant2.randomHumeur());
+
+console.log(enfant1.changerHumeur());
+console.log(enfant2.changerHumeur());
+
 
 // # Exo 4
 // - Créer une class "LeeGofGeek" avec 4 propriété : le nom du personnage, son pouvoir, dégats qu'il produit, santé et bonus
@@ -130,3 +146,61 @@ console.log(enfant1.result);
 // il y'a une attaque nommé "dead" qui permet d'eliminer l'ennemie du 1er coup. Il y'a un bonus nommé "null" qui donne aucun pouvoir.
 
 // - Une fois que la vie d'un des personnages tombe à zero, un alert s'affiche pour dire que la partie est terminé.
+
+class LeeGofGeek {
+    constructor(nom, pouvoir, degats, sante, bonus) {
+        this.nom = nom;
+        this.pouvoir = pouvoir;
+        this.degats = degats;
+        this.sante = sante;
+        this.bonus = bonus;
+    }
+
+    attaqueBasic(perso) {
+        perso.sante -= this.degats;
+        return "Santé : " + perso.sante;
+    }
+
+    attaqueSpecial(perso) {
+        perso.sante -= 25;
+        this.sante -= 15;
+        return "Santé : " + perso.sante;
+    }
+
+    autoSave(perso) {
+        perso.bonus = "null";
+        perso.sante += 35;
+        return "Santé : " + perso.sante;
+    }
+
+    joker(perso) {
+        if (perso.sante < 15) {
+            if (perso.bonus == "VieFull") {
+                perso.sante == 100;
+            } else if (useBonus.bonus == "dead") {
+                perso.sante -= 100;
+            }
+        }
+        return "Santé : " + perso.sante;
+    }
+}
+
+let personnageGeek1 = new LeeGofGeek("Nicolas", "eclair", 15, 100, "dead");
+let personnageGeek2 = new LeeGofGeek("Alexandre", "voler", 15, 100, "VieFull");
+
+console.log(personnageGeek1.attaqueBasic(personnageGeek2));
+console.log(personnageGeek1.attaqueSpecial(personnageGeek2));
+console.log(personnageGeek1.autoSave(personnageGeek2));
+console.log(personnageGeek1.joker(personnageGeek2));
+console.log(personnageGeek1.attaqueSpecial(personnageGeek2));
+console.log(personnageGeek1.attaqueSpecial(personnageGeek2));
+console.log(personnageGeek1.attaqueBasic(personnageGeek2));
+console.log(personnageGeek1.attaqueBasic(personnageGeek2));
+console.log(personnageGeek1.attaqueBasic(personnageGeek2));
+
+if (personnageGeek1.sante <= 0 || personnageGeek2.sante <= 0) {
+    alert("La partie est terminé ! ");
+}
+
+console.log(personnageGeek1);
+console.log(personnageGeek2);
