@@ -158,27 +158,40 @@ class LeeGofGeek {
 
     attaqueBasic(perso) {
         perso.sante -= this.degats;
+        if (this.sante <= 0 || perso.sante <= 0) {
+            return "La partie est terminé ! ";
+        }
         return "Santé : " + perso.sante;
     }
 
     attaqueSpecial(perso) {
         perso.sante -= 25;
         this.sante -= 15;
+        if (this.sante <= 0 || perso.sante <= 0) {
+            return "La partie est terminé ! ";
+        }
         return "Santé : " + perso.sante;
     }
 
     autoSave(perso) {
         perso.bonus = "null";
         perso.sante += 35;
+        if (this.sante <= 0 || perso.sante <= 0) {
+            return "La partie est terminé ! ";
+        }
         return "Santé : " + perso.sante;
     }
 
     joker(perso) {
-        if (perso.sante < 15) {
+        if (this.sante <= 0 || perso.sante <= 0) {
+            return "La partie est terminé ! ";
+        } else if (perso.sante < 15) {
             if (perso.bonus == "VieFull") {
-                perso.sante == 100;
+                perso.sante = 100;
+                return "Santé : " + perso.sante;
             } else if (useBonus.bonus == "dead") {
                 perso.sante -= 100;
+                return "Santé : " + perso.sante;
             }
         }
         return "Santé : " + perso.sante;
@@ -186,21 +199,22 @@ class LeeGofGeek {
 }
 
 let personnageGeek1 = new LeeGofGeek("Nicolas", "eclair", 15, 100, "dead");
-let personnageGeek2 = new LeeGofGeek("Alexandre", "voler", 15, 100, "VieFull");
+let personnageGeek2 = new LeeGofGeek("Alexandre", "feu", 15, 100, "VieFull");
+
+console.log(personnageGeek1);
+console.log(personnageGeek2);
 
 console.log(personnageGeek1.attaqueBasic(personnageGeek2));
 console.log(personnageGeek1.attaqueSpecial(personnageGeek2));
-console.log(personnageGeek1.autoSave(personnageGeek2));
 console.log(personnageGeek1.joker(personnageGeek2));
 console.log(personnageGeek1.attaqueSpecial(personnageGeek2));
 console.log(personnageGeek1.attaqueSpecial(personnageGeek2));
-console.log(personnageGeek1.attaqueBasic(personnageGeek2));
-console.log(personnageGeek1.attaqueBasic(personnageGeek2));
-console.log(personnageGeek1.attaqueBasic(personnageGeek2));
-
-if (personnageGeek1.sante <= 0 || personnageGeek2.sante <= 0) {
-    alert("La partie est terminé ! ");
-}
+console.log(personnageGeek1.joker(personnageGeek2));
+console.log(personnageGeek1.autoSave(personnageGeek2));
+console.log(personnageGeek1.attaqueSpecial(personnageGeek2));
+console.log(personnageGeek1.attaqueSpecial(personnageGeek2));
+console.log(personnageGeek1.attaqueSpecial(personnageGeek2));
+console.log(personnageGeek1.attaqueSpecial(personnageGeek2));
 
 console.log(personnageGeek1);
 console.log(personnageGeek2);
