@@ -1,12 +1,13 @@
-// 1
-let permierPara = document.getElementsByClassName("tartine");
-console.log(permierPara);
+let body = document.getElementsByTagName("body")[0];
+console.log(body);
 
-console.log(permierPara[0].innerText);
+// 1
+let classTartine = document.getElementsByClassName("tartine");
+console.log(classTartine[0].innerText);
 
 // 2
-let premierParaId = document.getElementById("toast");
-console.log(premierParaId.innerText);
+let idToast = document.getElementById("toast");
+console.log(idToast.innerText);
 
 // 3
-console.log(permierPara[1]);
+console.log(classTartine[1]);
