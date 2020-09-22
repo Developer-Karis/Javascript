@@ -1,68 +1,69 @@
-let premierEnfant = document.getElementById("content");
-console.log(premierEnfant);
-
 // 1 
 console.log("Exo 1 : ");
-console.log(premierEnfant.children[0]);
+let premierEnfant = document.getElementsByTagName("div")[0];
+console.log(premierEnfant.firstElementChild);
 
 // 2
-let titreNiv3 = document.getElementById("titreNiv3");
+let titreNiv3 = document.getElementsByTagName("h3")[1];
 console.log("Exo 2 : ");
 console.log(titreNiv3);
 
 // 3
 console.log("Exo 3 : ");
-console.log(titreNiv3.nextElementSibling);
+let titre3 = titreNiv3.previousElementSibling;
+console.log(titre3);
 
 // 4
-let petitParagraphe = document.getElementsByClassName("petitParagraphe")[0];
+let petitParagraphe = document.getElementsByTagName("p")[1];
 console.log("Exo 4 : ");
 console.log(petitParagraphe.nextElementSibling);
 
 // 5
-let elementParent = document.getElementsByClassName("important");
+let elementParent = document.getElementsByClassName("important")[0].parentElement;
 console.log("Exo 5 : ");
-elementParent = Array.from(elementParent);
-
-elementParent.forEach(element => {
-    console.log(element.parentElement);
-});
+console.log(elementParent);
 
 // 6 
 console.log("Exo 6 : ");
-console.log(elementParent[0]);
+let myListElement = document.getElementById("listElements").parentElement;
+let premierListElement = myListElement.firstElementChild;
+console.log(premierListElement);
 
 // 7
 console.log("Exo 7 : ");
-console.log(elementParent[elementParent.length - 1].nextElementSibling);
+let exo7 = document.getElementsByClassName("important");
+console.log(exo7[exo7.length - 1].nextElementSibling);
 
 // 8
-let paraGeneral = document.getElementById("textGeneral");
+let paraGeneral = document.getElementById("textGeneral").nextElementSibling.nextElementSibling;
 console.log("Exo 8 : ");
-console.log(paraGeneral.nextElementSibling.nextElementSibling);
+console.log(paraGeneral);
 
 // 9
 console.log("Exo 9 : ");
-let spanNom = document.getElementsByTagName("p");
-console.log(spanNom[6].firstElementChild);
-console.log(spanNom[spanNom.length - 1].firstElementChild);
+let spanNom = document.getElementsByTagName("span")[1];
+let spanParent = spanNom.parentElement;
+let mySpanPrenom = spanParent.nextElementSibling;
+console.log(mySpanPrenom);
 
 // 10
 console.log("Exo 10 : ");
-console.log(spanNom[spanNom.length - 1].firstElementChild.firstElementChild);
-console.log(spanNom[6].firstElementChild.firstElementChild);
+let nicolas = document.getElementsByTagName("b")[2];
+let primo = nicolas.parentElement.parentElement.previousElementSibling
+    .firstElementChild.firstElementChild.innerText;
+console.log(nicolas);
+console.log(primo);
 
 // 11
-let recupPara = document.getElementsByTagName("p")[1];
-var AttributeNode = recupPara.getAttribute("class");
+let recupPara = document.querySelector(".grandParagraphe");
 console.log("Exo 11 : ");
-console.log(AttributeNode);
+console.log(recupPara);
 
 // 12
-let liAll = document.getElementsByTagName("li");
+let liAll = document.querySelectorAll("li");
 console.log("Exo 12 : ");
 liAll = Array.from(liAll);
 
 liAll.forEach(element => {
-    console.log(element);
+    console.log(element.innerText);
 });
