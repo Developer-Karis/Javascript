@@ -13,8 +13,9 @@ console.log(h2.innerText);
 
 // 3
 console.log("Exo 3 : ");
-let p = document.querySelector("p").innerHTML = h2.innerHTML;
-console.log(p);
+let exo3 = h2.nextElementSibling;
+exo3.innerHTML = "'h2.innerHTML = 'Exercice 1'";
+console.log(exo3.innerText);
 
 // 4
 console.log("Exo 4 : ");
@@ -25,7 +26,7 @@ console.log(recupSection.id);
 console.log("Exo 5 : ");
 let h1 = document.querySelector("h1");
 console.log(h1.className);
-let version2h1 = document.getElementsByClassName("text-warning");
+let version2h1 = document.querySelector("h1").classList;
 console.log(version2h1);
 
 // 6
@@ -44,7 +45,7 @@ console.log(input.attributes);
 
 // 8
 console.log("Exo 8 : ");
-console.log(input.attributes.type);
+console.log(input.getAttribute('type'));
 
 // 9
 console.log("Exo 9 : ");
