@@ -85,6 +85,10 @@ let exo11 = exo10.nextElementSibling;
 exo11.setAttribute("class", "margin-top border-black padding");
 console.log(exo11);
 
+// Méthode 2
+
+// exo11.classList.add("margin-top", "border-black", "padding");
+
 // 12
 
 console.log("Exo 12 : ");
