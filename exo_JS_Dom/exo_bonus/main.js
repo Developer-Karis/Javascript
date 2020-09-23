@@ -1,11 +1,10 @@
+//Methode 1
 let myObject = {
-    nom: "nico",
-    age: 18
+    nom: 'nicolas',
+    age: 18,
 }
+let myDiv = document.querySelector('div#object').children;
 
-let h1 = document.querySelector("h1");
-let h2 = document.querySelector("h2");
-
-Object.entries(myObject).forEach((element, index) => {
-    h1.innerHTML = Object.values(element);
+Object.keys(myObject).forEach((element, index) => {
+    myDiv[index].innerText = myObject[element];
 });
