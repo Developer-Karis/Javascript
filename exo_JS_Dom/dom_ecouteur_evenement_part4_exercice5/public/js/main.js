@@ -44,6 +44,7 @@ createButton.addEventListener("click", () => {
     p1.innerText = valueP1;
     p3.innerText = valueP3;
 })
+
 // Exercice 04 - Renommer
 
 let pExo4 = document.getElementById("exo4");
@@ -56,11 +57,15 @@ buttonExo4.addEventListener("click", () => {
 
 // Exercice 05 - L'image
 
+let pExo5 = document.getElementsByClassName("box-body")[4].children[1];
+let indexStart = pExo5.innerText.indexOf(".");
+let source = pExo5.innerText.slice(indexStart);
+
 let btnExo5 = document.getElementsByClassName("btn")[3];
 let imgResponsiveExo5 = document.getElementsByClassName("img-responsive")[0];
 
 btnExo5.addEventListener("click", () => {
-    imgResponsiveExo5.src = "./src/image/tartine.png";
+    imgResponsiveExo5.src = source;
 })
 
 // Exercice 06 - Tartinashi la tartine voleuse
