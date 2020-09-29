@@ -44,11 +44,10 @@ myReplaceInput.addEventListener("click", () => {
 
 let inputReplaceLi = document.getElementById("replaceValue");
 let lastInput = document.querySelectorAll("input")[5];
-let liThree = document.querySelectorAll("ul")[1].children[2];
 
 lastInput.addEventListener("click", () => {
     let myNewLi2 = document.createElement("li");
     myNewLi2.innerText = inputReplaceLi.value;
-    let exo5Result = myUl.replaceChild(myNewLi2, liThree);
+    let exo5Result = myUl.replaceChild(myNewLi2, myUl.children[2]);
     console.log(exo5Result);
 })
