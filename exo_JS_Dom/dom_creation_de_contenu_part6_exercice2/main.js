@@ -1,6 +1,5 @@
 // 1
 let myUlChildren = document.querySelector("ul");
-let arr = Array.from(myUlChildren.children);
 
 let myFirstInput = document.querySelectorAll("input")[0];
 let mySecondInput = document.querySelectorAll("input")[1];
@@ -18,23 +17,38 @@ mySecondInput.addEventListener("click", () => {
 // 3
 myThirdInput.addEventListener("click", () => {
     let random = Math.floor(Math.random() * myUlChildren.children.length);
-    myUlChildren.removeChild(arr[random]);
+    console.log(random);
+    let display = myUlChildren.removeChild(myUlChildren.children[random]);
+    console.log(display);
 })
 
+// 4 
 
-let myUlAll = document.querySelectorAll("ul")[1].children;
+let myUl = document.querySelectorAll("ul")[1];
+let liTwo = document.querySelectorAll("ul")[1].children[1];
 
 let myNewLi = document.createElement("li");
 myNewLi.innerText = "Remplacer mon Li";
 
 console.log(document.body);
 let myReplaceInput = document.querySelectorAll("input")[3];
-let mySecondDiv = document.querySelectorAll("div")[1];
+let mySecondDiv = document.querySelectorAll("div")[1].children[2];
 mySecondDiv.appendChild(myNewLi);
 
-let temp;
 myReplaceInput.addEventListener("click", () => {
-    temp = myUlAll[1].innerText;
-    myUlAll[1].innerText = myNewLi.innerText;
-    myNewLi.innerText = temp;
+    let exo4Result = myUl.replaceChild(myNewLi, liTwo);
+    console.log(exo4Result);
+})
+
+// 5
+
+let inputReplaceLi = document.getElementById("replaceValue");
+let lastInput = document.querySelectorAll("input")[5];
+let liThree = document.querySelectorAll("ul")[1].children[2];
+
+lastInput.addEventListener("click", () => {
+    let myNewLi2 = document.createElement("li");
+    myNewLi2.innerText = inputReplaceLi.value;
+    let exo5Result = myUl.replaceChild(myNewLi2, liThree);
+    console.log(exo5Result);
 })
