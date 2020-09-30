@@ -17,27 +17,27 @@ let arr2 = Array.from(liAllTwo.children);
 arr2.forEach(element => {
     element.addEventListener("click", (e) => {
         if (e.target.innerText == "red") {
-            element.style.color = "red";
-            element.removeChild(element.children[0]);
-            element.removeChild(element.children[0]);
-            element.appendChild(document.createElement('span'));
-            element.children[0].innerText = "annulé";
-        } else if (e.target.innerText == "blue") {
-            element.style.color = "blue";
-            element.removeChild(element.children[0]);
-            element.removeChild(element.children[0]);
-            element.appendChild(document.createElement('span'));
-            element.children[0].innerText = "annulé";
-            element.children[0].style.color = "blue";
-            element.children[0].style.border = "1px solid blue";
-        } else if (e.target.innerText == "annulé") {
-            element.removeChild(element.children[0]);
-            element.appendChild(document.createElement('span'));
-            element.appendChild(document.createElement('span'));
-            element.children[0].innerText = "red";
-            element.children[1].innerText = "blue";
-            element.style.color = "black";
-            element.children[0].style.marginRight = "4px";
+            element.style.color = 'red';
+            element.children[0].style.display = 'none';
+            element.children[1].style.display = 'none';
+            element.appendChild(document.createElement('span'))
+            element.children[2].innerText = 'annulé';
+            element.children[2].style.border = "1px solid red";
+            element.children[2].style.padding = "3px";
+        } else if (e.target.innerText == 'blue') {
+            element.style.color = 'blue';
+            element.children[0].style.display = 'none';
+            element.children[1].style.display = 'none';
+            element.appendChild(document.createElement('span'))
+            element.children[2].innerText = 'annulé';
+            element.children[2].style.color = 'blue';
+            element.children[2].style.border = '1px solid blue';
+            element.children[2].style.padding = "3px";
+        } else if (e.target.innerText == 'annulé') {
+            element.style.color = '';
+            element.removeChild(element.children[2]);
+            element.children[0].style.display = '';
+            element.children[1].style.display = '';
         }
     })
 });
